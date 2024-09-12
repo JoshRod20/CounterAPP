@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {Counter} from "./Components/Counter"
+import { StyleSheet, View } from 'react-native';
+import Counter from './Components/Counter';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Counter/>
+      <Counter />
+      <StatusBar style="auto" />
     </View>
   );
 }

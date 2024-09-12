@@ -1,20 +1,30 @@
-import { useState } from "react-native";
+import React, { useState } from "react";
+import { View, Button, Text, StyleSheet } from "react-native";
 
 const Counter = () => {
-/**
-Este es un estado y el useState es una función
-const [number, setNumber] = useState(0);, dentro de los corchetes
-Siempre habrá una variable y una funcón que en este caso es number y setNumber
- */
-    const [count, setCount] = useState(0); //Ponemos la variable en un estado y cunado cambia el estado usando useState este se reenderiza
-//
-    const incrementar = () => {
-        setCount(count + 1);//En esta función de sumar, se ejecuta el setNumber que cambia el valor de la variable en el estado
-    }//El valor cambia según lo que se ponga en el paréntesis
+    const [count, setCount] = useState(0);
 
-    return (
-        <View></View>
-    )
-}
+    const incrementar = () => {
+    setCount(count + 1);
+};
+
+return (
+    <View style={styles.container}>
+        <Text style={styles.counterText}>{count}</Text>
+        <Button title="Incrementar" onPress={incrementar} />
+    </View>
+    );
+};
+
+const styles = StyleSheet.create({
+container: {
+    alignItems: "center",
+    justifyContent: "center",
+},
+counterText: {
+    fontSize: 48,
+    marginBottom: 10,
+},
+});
 
 export default Counter;
