@@ -14,7 +14,7 @@ Siempre habrá una variable y una función que en este caso es count y setCount*
 };//El valor cambia según lo que se ponga en el paréntesis
 
 const reiniciar = () => {
-    setCount(count == 0);
+    setCount(0);
 }
 
 return (
