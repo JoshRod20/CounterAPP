@@ -1,40 +1,39 @@
 import React, { useState } from "react";
-import { View, Button, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import CustomButton from './Button'; // Importa el componente del botón
 
-const Counter = () => {
-/**
-Este es un estado y el useState es una función
-const [count, setCount] = useState(0);, dentro de los corchetes
-Siempre habrá una variable y una función que en este caso es count y setCount*/
-
-    const [count, setCount] = useState(0);//Ponemos la variable en un estado y cuando cambia el estado usando useState este se reenderiza
+    const Counter = () => {
+    const [count, setCount] = useState(0);
 
     const incrementar = () => {
-    setCount(count + 1);//En esta función de count, se ejecuta el setCount que cambia el valor de la variable en el estado
-};//El valor cambia según lo que se ponga en el paréntesis
+        setCount(count + 1);
+    };
 
-const reiniciar = () => {
-    setCount(0);
-}
+    const reiniciar = () => {
+        setCount(0);
+    };
 
-return (
-    <View style={styles.container}>
+    return (
+        <View style={styles.container}>
         <Text style={styles.counterText}>{count}</Text>
-        <Button title="Incrementar" onPress={incrementar} />
-        <Button title="Reiniciar" onPress={reiniciar} />
-    </View>
+        
+        {/* Reemplaza los botones con el componente CustomButton */}
+        <CustomButton title="Incrementar" onPress={incrementar} />
+        <CustomButton title="Reiniciar" onPress={reiniciar} />
+        </View>
     );
-};
+    };
 
-const styles = StyleSheet.create({
-container: {
-    alignItems: "center",
-    justifyContent: "center",
-},
-counterText: {
-    fontSize: 48,
-    marginBottom: 10,
-},
-});
+    const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    counterText: {
+        fontSize: 48,
+        marginBottom: 20,
+    },
+    });
 
-export default Counter;
+    export default Counter;
