@@ -15,24 +15,40 @@ import CustomButton from './Button'; // Importa el componente del botón
 
     return (
         <View style={styles.container}>
-        <Text style={styles.counterText}>{count}</Text>
-        
+        <View style={styles.counterBox}>
+            <Text style={styles.counterText}>{count}</Text>
+        </View>
+
         {/* Reemplaza los botones con el componente CustomButton */}
-        <CustomButton title="Incrementar" onPress={incrementar} />
-        <CustomButton title="Reiniciar" onPress={reiniciar} />
+        <CustomButton title="Clic" onPress={incrementar} buttonStyle={styles.incrementButton} />
+        <CustomButton title="Reiniciar" onPress={reiniciar} buttonStyle={styles.resetButton} />
         </View>
     );
     };
 
     const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        alignItems: "center",
         justifyContent: "center",
+        flex: 1,
+    },
+    counterBox: {
+        borderWidth: 2,
+        borderColor: "#fff",
+        padding: 30,
+        marginBottom: 20,
         alignItems: "center",
     },
     counterText: {
-        fontSize: 48,
-        marginBottom: 20,
+        fontSize: 80,
+        color: "white",
+    },
+    incrementButton: {
+        backgroundColor: "blue",
+    },
+    resetButton: {
+        backgroundColor: "green",
+        marginTop: 10,
     },
     });
 
